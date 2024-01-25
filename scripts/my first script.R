@@ -50,3 +50,41 @@ raw(c(200))
 nrow(survays)/2
 survays[nrow(survays)/2, ]
 
+#Factors
+str(survays)
+#diffrence between categories or ch data----R deals with it as factors
+#creating a factor (limitted number of variances ex sex)
+#or if you have lemitted no. of species 
+survays$sex <- factor(survays$sex)
+survays$sex
+
+levels(survays$sex)
+nlevels(survays$sex)
+#sex <- factor
+survays$taxa<-factor(survays$taxa)
+nlevels(survays$taxa)
+survays$genus <-  factor(survays$genus)
+nlevels(survays$genus)
+summary(survays)
+sum(survays$taxa=="Rabbit")
+
+#convert a factor
+as.character(survays$sex)
+
+#what if the factor is numeric---ex year num
+# Renaming factors
+plot(survays$sex)
+summary(survays$sex)
+sex<-survays$sex
+leves(sex)
+sex<-addNA(sex)
+levels(sex)
+
+#change NA to undetermined 
+levels(sex)[3]<-"undetermined"
+plot(sex)
+
+levels(sex)
+levels(sex)[1:2]<-c("female","male")
+plot(sex)
+sex<-factro(sex,level=)
